@@ -1,6 +1,6 @@
 {
     "version": "0.0.1",
-    "name": "@lja/standards",
+    "name": "@lloydjatkinson/standards",
     "description": "Shared standards and configurations for code quality.",
     "author": "Lloyd Atkinson",
     "keywords": [
