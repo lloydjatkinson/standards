@@ -46,8 +46,7 @@
         "enabled": true,
         "indentStyle": "space",
         "indentWidth": 4,
-        "lineWidth": 120,
-        "lineEnding": "crlf"
+        "lineWidth": 120
     },
     "javascript": {
         "formatter": {
