@@ -1,0 +1,19 @@
+{
+    "version": "0.0.1",
+    "name": "@lja/standards",
+    "description": "Shared standards and configurations for code quality.",
+    "author": "Lloyd Atkinson",
+    "keywords": [
+        "code quality",
+        "standards",
+        "conventions",
+        "formatting",
+        "linting",
+        "biome"
+    ],
+    "type": "module",
+    "packageManager": "pnpm@10.17.0",
+    "exports": {
+        "./biome": "./biome.json"
+    }
+}

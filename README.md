@@ -1,2 +1,2 @@
 # standards
-Shared standards and configurations for code quality
+Shared standards and configurations for code quality.

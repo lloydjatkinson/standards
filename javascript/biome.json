@@ -1,0 +1,131 @@
+{
+    "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+    "assist": {
+        "actions": {
+            "source": {
+                "organizeImports": {
+                    "level": "on",
+                    "options": {
+                        "groups": [
+                            [
+                                ":PACKAGE_WITH_PROTOCOL:",
+                                ":PACKAGE:",
+                                "!@ui/**",
+                                "!@images/**",
+                                "!@features/**",
+                                "!@domain/**"
+                            ],
+                            ":BLANK_LINE:",
+                            ["@ui/**"],
+                            ":BLANK_LINE:",
+                            ["@features/**"],
+                            ":BLANK_LINE:",
+                            ["@images/**"],
+                            ":BLANK_LINE:",
+                            ["@images/**"],
+                            ":BLANK_LINE:",
+                            ["../**"],
+                            ":BLANK_LINE:",
+                            ["./**"]
+                        ]
+                    }
+                },
+                "recommended": true,
+                "useSortedAttributes": "on",
+                "useSortedProperties": "on"
+            }
+        },
+        "enabled": true
+    },
+    "files": {
+        "ignoreUnknown": true
+    },
+    "formatter": {
+        "attributePosition": "multiline",
+        "bracketSameLine": true,
+        "enabled": true,
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineWidth": 120,
+        "lineEnding": "crlf"
+    },
+    "javascript": {
+        "formatter": {
+            "bracketSameLine": true,
+            "jsxQuoteStyle": "double",
+            "quoteStyle": "single"
+        }
+    },
+    "json": {
+        "formatter": {
+            "indentStyle": "space",
+            "indentWidth": 4
+        }
+    },
+    "linter": {
+        "domains": {
+            "project": "all",
+            "react": "all",
+            "test": "all"
+        },
+        "enabled": true,
+        "rules": {
+            "a11y": "error",
+            "complexity": "error",
+            "correctness": "error",
+            "nursery": {
+                "recommended": true
+            },
+            "performance": "error",
+            "recommended": true,
+            "security": "error",
+            "style": {
+                "recommended": true
+            },
+            "suspicious": {
+                "recommended": true
+            }
+        }
+    },
+    "overrides": [
+        {
+            "includes": ["**/*.ts", "**/*.ts", "**/*.astro"],
+            "linter": {
+                "rules": {
+                    "correctness": {
+                        "noUndeclaredDependencies": "off"
+                    }
+                }
+            }
+        },
+        {
+            "includes": ["**/*.svelte", "**/*.astro", "**/*.vue"],
+            "linter": {
+                "rules": {
+                    "correctness": {
+                        "noUnusedImports": "off",
+                        "noUnusedVariables": "off",
+                        "useImportExtensions": "off",
+                        "noNodejsModules": "off"
+                    },
+                    "style": {
+                        "useConst": "off",
+                        "useImportType": "off",
+                        "useFilenamingConvention": {
+                            "level": "error",
+                            "options": {
+                                "filenameCases": ["PascalCase", "kebab-case", "export"]
+                            }
+                        },
+                        "useExportsLast": "off"
+                    }
+                }
+            }
+        }
+    ],
+    "vcs": {
+        "clientKind": "git",
+        "enabled": true,
+        "useIgnoreFile": true
+    }
+}
