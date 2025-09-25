@@ -10,19 +10,19 @@
                             [
                                 ":PACKAGE_WITH_PROTOCOL:",
                                 ":PACKAGE:",
-                                "!@ui/**",
-                                "!@images/**",
-                                "!@features/**",
-                                "!@domain/**"
+                                "!@/domain/**",
+                                "!@/ui/**",
+                                "!@/images/**",
+                                "!@/features/**"
                             ],
                             ":BLANK_LINE:",
-                            ["@ui/**"],
+                            ["@/domain/**"],
                             ":BLANK_LINE:",
-                            ["@features/**"],
+                            ["@/ui/**"],
                             ":BLANK_LINE:",
-                            ["@images/**"],
+                            ["@/features/**"],
                             ":BLANK_LINE:",
-                            ["@images/**"],
+                            ["@/images/**"],
                             ":BLANK_LINE:",
                             ["../**"],
                             ":BLANK_LINE:",
@@ -46,7 +46,8 @@
         "enabled": true,
         "indentStyle": "space",
         "indentWidth": 4,
-        "lineWidth": 120
+        "lineWidth": 120,
+        "lineEnding": "crlf"
     },
     "javascript": {
         "formatter": {
@@ -71,15 +72,26 @@
         "rules": {
             "a11y": "error",
             "complexity": "error",
-            "correctness": "error",
+            "correctness": {
+                "recommended": true,
+                "noNodejsModules": "off"
+            },
             "nursery": {
                 "recommended": true
             },
-            "performance": "error",
+            "performance": {
+                "recommended": true
+            },
             "recommended": true,
             "security": "error",
             "style": {
-                "recommended": true
+                "recommended": true,
+                "useFilenamingConvention": {
+                    "level": "error",
+                    "options": {
+                        "filenameCases": ["PascalCase", "kebab-case", "export"]
+                    }
+                }
             },
             "suspicious": {
                 "recommended": true
@@ -88,35 +100,16 @@
     },
     "overrides": [
         {
-            "includes": ["**/*.ts", "**/*.ts", "**/*.astro"],
-            "linter": {
-                "rules": {
-                    "correctness": {
-                        "noUndeclaredDependencies": "off"
-                    }
-                }
-            }
-        },
-        {
             "includes": ["**/*.svelte", "**/*.astro", "**/*.vue"],
             "linter": {
                 "rules": {
-                    "correctness": {
-                        "noUnusedImports": "off",
-                        "noUnusedVariables": "off",
-                        "useImportExtensions": "off",
-                        "noNodejsModules": "off"
-                    },
                     "style": {
                         "useConst": "off",
-                        "useImportType": "off",
-                        "useFilenamingConvention": {
-                            "level": "error",
-                            "options": {
-                                "filenameCases": ["PascalCase", "kebab-case", "export"]
-                            }
-                        },
-                        "useExportsLast": "off"
+                        "useImportType": "off"
+                    },
+                    "correctness": {
+                        "noUnusedVariables": "off",
+                        "noUnusedImports": "off"
                     }
                 }
             }
